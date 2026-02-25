@@ -1,0 +1,89 @@
+/* Layout del modal */
+.container {
+  display: grid;
+  gap: 20px;
+  padding: 0 24px 16px;
+}
+
+.label {
+  font-weight: 700;
+  color: #111827;
+}
+
+.input {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  border-radius: 10px;
+  height: 44px;
+  padding: 0 12px;
+  color: #111827;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  transition: all 0.2s ease;
+}
+
+.input:hover {
+  border-color: #9ca3af;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #111827;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.08);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* Animaciones adicionales en negro/blanco */
+.animatedPrimary {
+  /* usa variant primary (negro) del botón; animación fluida */
+  border-radius: 12px !important;
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.animatedPrimary:hover:not(:disabled) {
+  transform: translateY(-1px) scale(1.015) !important;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.22) !important;
+}
+
+.animatedPrimary:active:not(:disabled) {
+  transform: translateY(0) scale(1) !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.18) !important;
+}
+
+.animatedSecondary {
+  /* usa variant secondary (blanco) del botón; animación fluida */
+  border-radius: 12px !important;
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.animatedSecondary:hover:not(:disabled) {
+  transform: translateY(-1px) scale(1.015) !important;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.14) !important;
+}
+
+.animatedSecondary:active:not(:disabled) {
+  transform: translateY(0) scale(1) !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.10) !important;
+}
+
+/* Respeto accesibilidad: menos movimiento si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  .animatedPrimary,
+  .animatedSecondary {
+    transition: none !important;
+    transform: none !important;
+  }
+}

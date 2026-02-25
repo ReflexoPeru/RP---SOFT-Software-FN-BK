@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@import "./shared/styles/scrollbar.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+/* Aplicar scrollbar celeste por defecto a todo el body */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #b3d9ff transparent;
+}
+
+body::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+  border: none;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #b3d9ff;
+  border-radius: 2px;
+  border: none;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #99ccff;
+}
+
+/* Quitar botones/flechas del scrollbar */
+*::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+*::-webkit-scrollbar-corner {
+  display: none;
+  background: transparent;
+}
